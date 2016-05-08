@@ -1,5 +1,6 @@
 /test-angular2.iml
 .idea
+.vscode
 typings
 node_modules
 jspm_packages
