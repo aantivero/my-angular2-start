@@ -6,6 +6,7 @@ import {Hero} from './hero';
     template: `<h1>{{title}}</h1>
     <h2>my favorite hero is: {{myHero.name}}</h2>
     <p>Heroes</p>
+    <p *ngIf="heroes.length > 3">There are many heroes</p>
     <ul>
         <li *ngFor="let hero of heroes">
             {{hero.name}}
