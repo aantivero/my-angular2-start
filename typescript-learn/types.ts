@@ -152,3 +152,49 @@ interface Point {
     y: number;
     z: number;
 }
+
+//Funciones
+//valores por defecto = xxx
+function buildName(firstname: string, lastname: string = "Smith"){
+    console.log("HI " + firstname + lastname);
+}
+//o de la siguiente forma 
+class Foo {
+    buildName(name: string, surname: string = "Sting"){
+        
+    }
+}
+//parametros opcionales con el signo ?
+class anotherFoo {
+    buildName(name: string, lastname?: string){
+        if (lastname) {
+            //es atribuido...
+        }
+    }
+}
+//parametros Rest se lo pasa solo como último parámetro
+class FooRest {
+    static alertName(firstname: string, ...restOfName: string[]) {
+        console.log(firstname + " " + restOfName.join(" "));
+    }
+}
+FooRest.alertName("MR", "John", "Doe");
+//parámetros en JSON format
+class PointJSON {
+    private _x: number = 0;
+    private _y: number = 0;
+    private _z: number = 0;
+    
+    constructor(p: {x: number; y: number; z?: number;}) {
+        this._x = p.x;
+        this._y = p.y;
+        if (p.z) 
+            this._z = p.z;
+    }
+    
+    is3d(): boolean {
+        return this._z != 0;
+    }
+}
+let p1 = new PointJSON({x: 10, y: 20});
+console.log(p1.is3d());//return false
