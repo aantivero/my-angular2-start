@@ -33,3 +33,19 @@ let otrocuadrado = crearSquare({colour: "rojo", width: 1000} as SquareConfig);
 
 let squareOptions = {colour: "red", width: 300};
 let miocuadrado = crearSquare(squareOptions);
+
+//function types
+interface SearchFunc {
+    (source: string, subString: string): boolean;
+}
+//luego de definida la puedo utilizar en una funcion 
+//el nombre de los parametros no necesariamente se llaman igual
+let mySearch: SearchFunc;
+mySearch = function(source: string, subString: string) {
+    let result = source.search(subString);
+    if (result == -1) {
+        return false;
+    } else {
+        return true;
+    }
+}
