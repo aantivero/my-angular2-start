@@ -1,5 +1,9 @@
 //primera interfaz
-function imprimirLabel(labelledObject: {label: string}) {
+interface LabelledValue {
+    label: string;
+}
+
+function imprimirLabel(labelledObject: LabelledValue) {
     console.log(labelledObject.label);
 }
 
