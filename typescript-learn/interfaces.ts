@@ -49,3 +49,17 @@ mySearch = function(source: string, subString: string) {
         return true;
     }
 }
+
+//indexable types
+//tiene un index signature que declara el tipo que usamos para indexar dentro del objeto
+//Tengo un interfaz StringArray que tiene un index signature. 
+//La firma establece que:
+//Cuando se index con un número devuelve un string
+interface StringArray {
+    [index: number]: string;
+}
+
+let myArray: StringArray;
+myArray = ["Bob", "Fred"];
+
+let myStr: string = myArray[0];
