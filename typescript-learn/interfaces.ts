@@ -63,3 +63,24 @@ let myArray: StringArray;
 myArray = ["Bob", "Fred"];
 
 let myStr: string = myArray[0];
+
+//se soporta solo string y number
+class Musica {
+    name: string;
+}
+class Metal extends Musica {
+    group: string;
+}
+//lo siguiente da error
+/*
+interface NotOkay {
+    [x: number]: Musica;
+    [x: string]: Metal;
+}*/
+
+//Dictionary Pattern
+interface NumberDictionary {
+    [index: string]: number;
+    length: number; //ok, length es un numero
+    //name: string; //error, name no es un numero 
+}
